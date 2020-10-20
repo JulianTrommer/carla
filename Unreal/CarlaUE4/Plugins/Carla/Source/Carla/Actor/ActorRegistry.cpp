@@ -35,6 +35,10 @@ static FActorView::ActorType FActorRegistry_GetActorType(const FActorView &View)
   {
     return FActorView::ActorType::TrafficSign;
   }
+  else if (nullptr != Cast<ACarlaScoomaticBase>(View.GetActor()))
+  {
+    return FActorView::ActorType::Scoomatic;
+  }
   else
   {
     return FActorView::ActorType::Other;

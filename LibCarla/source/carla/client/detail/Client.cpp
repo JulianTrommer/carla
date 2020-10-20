@@ -20,6 +20,8 @@
 #include "carla/rpc/WalkerControl.h"
 #include "carla/streaming/Client.h"
 
+#include "carla/rpc/ScoomaticControl.h"
+
 #include <rpc/rpc_error.h>
 
 #include <thread>
@@ -287,6 +289,10 @@ namespace detail {
 
   void Client::ApplyBoneControlToWalker(rpc::ActorId walker, const rpc::WalkerBoneControl &control) {
     _pimpl->AsyncCall("apply_bone_control_to_walker", walker, control);
+  }
+
+  void Client::ApplyControlToScoomatic(rpc::ActorId scoomatic, const rpc::ScoomaticControl &control) {
+    _pimpl->AsyncCall("apply_control_to_scoomatic", scoomatic, control);
   }
 
   void Client::SetTrafficLightState(
