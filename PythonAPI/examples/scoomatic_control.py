@@ -812,7 +812,7 @@ def main():
     argparser.add_argument(
         '--filter',
         metavar='PATTERN',
-        default='scoomatic.scoomatic.uni_a',
+        default='vehicle.scoomatic.hoverboard',
         help='actor filter (default: "scoomatic.*")')
     argparser.add_argument(
         '--rolename',
